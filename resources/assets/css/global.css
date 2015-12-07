@@ -1,0 +1,17 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+/* titulo del proyecto */
+.pagina_title{
+	padding-top: 1em;
+	font-size: 6em;
+}
+.pagina_title span{
+	font-size: 3em;
+}
+/* padding */
+.p3{
+	padding: 3px;
+}
