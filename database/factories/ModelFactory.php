@@ -11,7 +11,7 @@
 |
 */
 
-$factory->define(electivos\Usuario::class, function (Faker\Generator $faker) {
+$factory->define(electivos\Model\Usuario::class, function (Faker\Generator $faker) {
     return [
         'email' 		=> $faker->unique()->email,
         'password' 		=> bcrypt(str_random(10)),
@@ -20,7 +20,7 @@ $factory->define(electivos\Usuario::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(electivos\DatosUsuario::class, function (Faker\Generator $faker) {
+$factory->define(electivos\Model\DatosUsuario::class, function (Faker\Generator $faker) {
     return [
         'nombres' 		=>  $faker->firstName,
     	'apellidos' 	=>  $faker->lastName,

@@ -13,10 +13,35 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Model::unguard();
-
+        
+        $this->truncateTables(array(
+            'usuarios',
+            'password_resets',
+            'datos_usuarios',
+        ));
+        
         $this->call(UsuarioTableSeeder::class);
-        //$this->call(DatosUsuarioTableSeeder::class);
+        $this->call(DatosUsuarioTableSeeder::class);
 
         Model::reguard();
+    }
+
+    private function truncateTables(array $tables){
+
+        $this->checkForeignKey(false);
+
+        foreach ($tables as $table) {
+            DB::Table('usuarios')->truncate();
+        }
+
+        $this->checkForeignKey(true);
+
+    }
+
+    private function checkForeignKey($check){
+
+        $check = $check ? '1' : '0';
+        DB::statement('SET FOREIGN_KEY_CHECKS = '. $check);
+
     }
 }

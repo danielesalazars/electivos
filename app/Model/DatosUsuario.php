@@ -1,12 +1,12 @@
 <?php
 
-namespace electivos;
+namespace electivos\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
 class DatosUsuario extends Model
 {
-    protected $table = "datos_usuario";
+    protected $table = "datos_usuarios";
 
     protected $fillable = [
     	'nombres',
