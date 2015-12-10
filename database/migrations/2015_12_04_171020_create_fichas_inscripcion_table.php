@@ -33,8 +33,8 @@ class CreateFichasInscripcionTable extends Migration
             $table->foreign('especialidad_id')->references('id')->on('especialidades')->onDelete('cascade');
             $table->foreign('tutor_id')->references('id')->on('tutores')->onDelete('cascade');
             $table->foreign('oferta_id')->references('id')->on('ofertas')->onDelete('cascade');
-            $table->foreign('estado_ficha_inscripcion_id')->references('id')->on('estado_fichas_inscripciones')->onDelete('cascade');
-            $table->foreign('tipo_electivo_id')->references('id')->on('tipos_electivos')->onDelete('cascade');
+            $table->foreign('estado_ficha_inscripcion_id')->references('id')->on('estado_fichas_inscripcion')->onDelete('cascade');
+            $table->foreign('tipo_electivo_id')->references('id')->on('tipo_electivos')->onDelete('cascade');
             $table->foreign('bloque_id')->references('id')->on('bloques')->onDelete('cascade');
             $table->foreign('actividad_extracurricular_id')->references('id')->on('actividades_extracurriculares')->onDelete('cascade');
 

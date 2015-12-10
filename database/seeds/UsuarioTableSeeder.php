@@ -24,6 +24,7 @@ class UsuarioTableSeeder extends BaseSeeder
             'email'    => 'daniel.esalazars@gmail.com',
             'password' => bcrypt('secret'),
             'dni'      => '45888211',
+            'rol_id'   => 1
         ]);
 
     }
@@ -33,12 +34,13 @@ class UsuarioTableSeeder extends BaseSeeder
         return new Usuario();
     }
 
-    public function getDummyData(Generator$faker, array $valoresPersonalizados = array())
+    public function getDummyData(Generator $faker, array $valoresPersonalizados = array())
     {
         return [
-            'email'    => $faker->unique()->email,
-            'password' => bcrypt('secret'),
-            'dni'    => $faker->unique()->randomNumber($nbDigits = 8),
+            'email'     => $faker->unique()->email,
+            'password'  => bcrypt('secret'),
+            'dni'       => $faker->unique()->randomNumber($nbDigits = 8),
+            'rol_id'    => 2,
         ];
     }
 }

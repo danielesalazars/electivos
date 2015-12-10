@@ -26,8 +26,8 @@ class CreateFichasEvaluacionTable extends Migration
             $table->integer('categoria_evaluacion_id')->nullable()->unsigned();
 
             $table->foreign('ficha_evaluacion_pdf_id')->references('id')->on('fichas_evaluacion_pdf')->onDelete('cascade');
-            $table->foreign('tipo_ficha_evaluacion_id')->references('id')->on('tipos_fichas_evaluaciones')->onDelete('cascade');
-            $table->foreign('categoria_evaluacion_id')->references('id')->on('categorias_evaluaciones')->onDelete('cascade');
+            $table->foreign('tipo_ficha_evaluacion_id')->references('id')->on('tipo_fichas_evaluacion')->onDelete('cascade');
+            $table->foreign('categoria_evaluacion_id')->references('id')->on('categorias_evaluacion')->onDelete('cascade');
 
             $table->timestamps();
         });

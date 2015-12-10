@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEstadosFichasEvaluacionesTable extends Migration
+class CreateTipoFichasEvaluacionTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateEstadosFichasEvaluacionesTable extends Migration
      */
     public function up()
     {
-        Schema::create('estado_fichas_evaluaciones', function (Blueprint $table) {
+        Schema::create('tipo_fichas_evaluacion', function (Blueprint $table) {
             $table->increments('id');
             $table->string('estado',255);
             $table->timestamps();
@@ -26,6 +26,6 @@ class CreateEstadosFichasEvaluacionesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('estado_fichas_evaluaciones');
+        Schema::drop('tipo_fichas_evaluacion');
     }
 }

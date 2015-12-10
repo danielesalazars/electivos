@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCategoriasEvaluacionesTable extends Migration
+class CreateEstadoFichasInscripcionTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,9 @@ class CreateCategoriasEvaluacionesTable extends Migration
      */
     public function up()
     {
-        Schema::create('categorias_evaluaciones', function (Blueprint $table) {
+        Schema::create('estado_fichas_inscripcion', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre',255);
-            $table->text('descripcion');
+            $table->string('estado',255);
             $table->timestamps();
         });
     }
@@ -27,6 +26,6 @@ class CreateCategoriasEvaluacionesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('categorias_evaluaciones');
+        Schema::drop('estado_fichas_inscripcion');
     }
 }

@@ -19,7 +19,7 @@ class CreateFichasEvaluacionPdfTable extends Migration
             $table->integer('estado_ficha_evaluacion_id')->unsigned();
 
             $table->foreign('ficha_inscripcion_id')->references('id')->on('fichas_inscripcion')->onDelete('cascade');
-            $table->foreign('estado_ficha_evaluacion_id')->references('id')->on('estado_fichas_evaluaciones')->onDelete('cascade');
+            $table->foreign('estado_ficha_evaluacion_id')->references('id')->on('estado_fichas_evaluacion')->onDelete('cascade');
            
             $table->timestamps();
         });

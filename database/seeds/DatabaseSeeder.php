@@ -15,13 +15,27 @@ class DatabaseSeeder extends Seeder
         Model::unguard();
         
         $this->truncateTables(array(
+            'roles',
             'usuarios',
             'password_resets',
-            'datos_usuarios',
+            'perfiles',
+            'tipo_actividades',
+            'tipo_electivos',
         ));
         
+        $this->call(DepartamentoAcademicoTableSeeder::class);
+        $this->call(AreaTableSeeder::class);
+        $this->call(EspecialidadTableSeeder::class);
+        $this->call(TipoActividadTableSeeder::class);
+        $this->call(TipoElectivoTableSeeder::class);
+        $this->call(TipoOfertaTableSeeder::class);
+        $this->call(RolesTableSeeder::class);
+        $this->call(TutorTableSeeder::class);
+        //EJECUTAR ANTES LA TABLA PAISES
+        $this->call(SedeTableSeeder::class);
+        
         $this->call(UsuarioTableSeeder::class);
-        $this->call(DatosUsuarioTableSeeder::class);
+        $this->call(PerfilTableSeeder::class);
 
         Model::reguard();
     }
@@ -31,7 +45,7 @@ class DatabaseSeeder extends Seeder
         $this->checkForeignKey(false);
 
         foreach ($tables as $table) {
-            DB::Table('usuarios')->truncate();
+            DB::Table($table)->truncate();
         }
 
         $this->checkForeignKey(true);

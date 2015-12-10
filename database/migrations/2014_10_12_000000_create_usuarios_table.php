@@ -16,9 +16,12 @@ class CreateUsuariosTable extends Migration
             $table->increments('id');
             $table->string('dni',8)->unique();
             $table->string('email')->unique();
+            $table->integer('rol_id')->unsigned()->onDefault(2);
             $table->string('password', 60);
             $table->rememberToken();
             $table->timestamps();
+            
+            $table->foreign('rol_id')->references('id')->on('roles')->onDelete('cascade');
         });
     }
 
