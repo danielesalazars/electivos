@@ -1,0 +1,29 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+a{
+    outline: none;
+    text-decoration: none !important;
+}
+/* titulo del proyecto */
+.pagina_title{
+    padding-top: 1em;
+    font-size: 6em;
+}
+.pagina_title span{
+    font-size: 3em;
+}
+/* padding */
+.pt_1em{
+    padding-top: 1em;
+}
+.p3{
+    padding: 3px;
+}
+/* color de fondo */
+/* color de texto */
+/* tamaño de letra */
+
+/* home - electivos */

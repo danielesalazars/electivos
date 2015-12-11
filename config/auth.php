@@ -28,7 +28,7 @@ return [
     |
     */
 
-    'model' => App\Usuario::class,
+    'model' => electivos\Model\Usuario::class,
 
     /*
     |--------------------------------------------------------------------------

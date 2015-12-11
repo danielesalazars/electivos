@@ -4,16 +4,12 @@ namespace electivos\Http\Controllers;
 
 use electivos\Http\Controllers\Controller;
 
-class HomeController extends Controller {
-
+class ExternadoController extends Controller
+{
     public function __construct() {
-
         $this->middleware('auth');
     }
-
-    public function index() {
-
-        return view('home');
+    public function lista(){
+        return view('externado.lista');
     }
-
 }

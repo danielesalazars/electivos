@@ -2,35 +2,36 @@
 
 namespace electivos\Http\Controllers\Auth;
 
-use electivos\Usuario;
+use electivos\Model\Usuario;
 use Validator;
 use electivos\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
-class AuthController extends Controller
-{
-    protected $username = 'dni';
-    /*
-    |--------------------------------------------------------------------------
-    | Registration & Login Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles the registration of new users, as well as the
-    | authentication of existing users. By default, this controller uses
-    | a simple trait to add these behaviors. Why don't you explore it?
-    |
-    */
+class AuthController extends Controller {
 
-    use AuthenticatesAndRegistersUsers, ThrottlesLogins;
+    protected $username = 'dni';
+
+    /*
+      |--------------------------------------------------------------------------
+      | Registration & Login Controller
+      |--------------------------------------------------------------------------
+      |
+      | This controller handles the registration of new users, as well as the
+      | authentication of existing users. By default, this controller uses
+      | a simple trait to add these behaviors. Why don't you explore it?
+      |
+     */
+
+use AuthenticatesAndRegistersUsers,
+    ThrottlesLogins;
 
     /**
      * Create a new authentication controller instance.
      *
      * @return void
      */
-    public function __construct()
-    {
+    public function __construct() {
         $this->middleware('guest', ['except' => 'getLogout']);
     }
 
@@ -40,12 +41,11 @@ class AuthController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data)
-    {
+    protected function validator(array $data) {
         return Validator::make($data, [
-            //'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:usuarios',
-            'password' => 'required|confirmed|min:6',
+                    //'name' => 'required|max:255',
+                    'email' => 'required|email|max:255|unique:usuarios',
+                    'password' => 'required|confirmed|min:6',
         ]);
     }
 
@@ -55,12 +55,11 @@ class AuthController extends Controller
      * @param  array  $data
      * @return User
      */
-    protected function create(array $data)
-    {
+    protected function create(array $data) {
         return Usuario::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
+                    'name' => $data['name'],
+                    'email' => $data['email'],
+                    'password' => bcrypt($data['password']),
         ]);
     }
 
@@ -69,8 +68,7 @@ class AuthController extends Controller
      *
      * @return string
      */
-    public function loginPath()
-    {
+    public function loginPath() {
         return route('login');
     }
 
@@ -79,9 +77,8 @@ class AuthController extends Controller
      *
      * @return string
      */
-    public function redirectPath()
-    {
+    public function redirectPath() {
         return route('home');
     }
-    
+
 }
